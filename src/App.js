@@ -33,6 +33,7 @@ class App extends Component {
     this.state = {books: sample};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.toggleStatus = this.toggleStatus.bind(this);
   }
   newBook(event){
     const title = event.target.children[2].value;
@@ -60,6 +61,13 @@ class App extends Component {
     books.splice(bookId,1);
     this.setState({books});    
   }
+  toggleStatus(bookId){
+    const books = this.state.books;
+    const book  = books[bookId];
+    book.status? book.status = false : book.status = true;
+    
+    this.setState({books});
+  }
   handleDelete(bookId){
     this.removeFromLibrary(bookId);     
   }
@@ -79,7 +87,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">My Bookshelf</h1>
         </header>
-        <Bookshelf books={this.state.books} onDelete={this.handleDelete}/>
+        <Bookshelf books={this.state.books} onDelete={this.handleDelete} toggleStatus={this.toggleStatus}/>
         <BookForm onSubmit={this.handleSubmit}/>
       </div>
     );

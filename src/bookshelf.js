@@ -20,7 +20,8 @@ class BookShelf extends Component {
         </thead>
         <tbody>
           {books.map((book,index)=>(
-              <Book book={book} key={index} id={index} onDelete={this.props.onDelete}/>
+              <Book book={book} key={index} id={index} 
+              onDelete={this.props.onDelete} onToggleStatus={this.props.toggleStatus}/>
             ))}
         </tbody>
       </table>

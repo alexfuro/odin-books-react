@@ -11,7 +11,7 @@ class Book extends Component {
         <td>{book.descrip}</td>
         <td>{book.pages}</td>
         <td>{book.status? "read" : "unread"}</td>
-        <td><button>Change Status</button></td>
+        <td><button onClick={() => this.props.onToggleStatus(this.props.id)}>Change Status</button></td>
         <td><button onClick={() => this.props.onDelete(this.props.id)}>Delete Book</button></td>
       </tr>
     );
