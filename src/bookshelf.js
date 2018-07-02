@@ -2,35 +2,9 @@ import React, { Component } from 'react';
 import Book from './book';
 
 
-const sample = [
-  {
-    title: "Moby Dick",
-    author: "Some dude",
-    descrip: "Whales man",
-    pages: "2000",
-    status: true
-  },{
-    title: "Dick Tracy",
-    author: "Some other dude",
-    descrip: "Dectective man",
-    pages: "200",
-    status: false
-  },{
-    title: "No Longer Human",
-    author: "Dazai",
-    descrip: "Jap man",
-    pages: "500",
-    status: false
-  }
-];
-
 class BookShelf extends Component {
-  constructor(props){
-    super(props);
-    this.state = {books: sample};
-  }
   render() {
-    const books = this.state.books;
+    const books = this.props.books;
     return (
       <table>
         <thead>
