@@ -19,7 +19,7 @@ class BookForm extends Component {
         <input type="number"name="pages" placeholder="1" min="1" /><br />
         
         <label>Read?</label>
-        <input type="checkbox" name="status" />
+        <input type="checkbox" name="status" /><br />
 
         <input type="submit" id="submitBookForm" name="submitBook" value="Save" />
       </form>
