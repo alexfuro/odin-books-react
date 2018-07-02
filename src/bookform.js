@@ -3,22 +3,22 @@ import React, { Component } from 'react';
 class BookForm extends Component {
   render() {
     return (
-      <form className="BookForm">
+      <form className="BookForm" onSubmit={this.props.onSubmit}>
         <legend>Add to Library</legend>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="title" />
+        <label>Title:</label>
+        <input type="text" name="title" placeholder="title" /><br />
         
-        <label for="author">Author</label>
-        <input type="text" id="author" name="author" placeholder="author"/>
+        <label>Author:</label>
+        <input type="text" name="author" placeholder="author"/><br />
         
-        <label for="descrip">Description</label>
-        <textarea id="descrip" name="descrip" ></textarea>
+        <label>Description:</label>
+        <textarea name="descrip" ></textarea><br />
         
-        <label for="pages">Pages</label>
-        <input type="number" id="pages" name="pages" placeholder="1" min="1" />
+        <label>Pages:</label>
+        <input type="number"name="pages" placeholder="1" min="1" /><br />
         
-        <label for="status">Read?</label>
-        <input type="checkbox" id="status" name="status" />
+        <label>Read?</label>
+        <input type="checkbox" name="status" />
 
         <input type="submit" id="submitBookForm" name="submitBook" value="Save" />
       </form>
