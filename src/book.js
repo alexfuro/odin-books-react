@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 class Book extends Component {
   render() {
+    const {book} = this.props;
     return (
-      const {book} = this.props.book;
       <tr>
         <td>{book.title}</td>
         <td>{book.author}</td>
@@ -18,4 +18,4 @@ class Book extends Component {
   }
 }
 
-export default App;
+export default Book;

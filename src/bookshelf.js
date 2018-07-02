@@ -7,6 +7,7 @@ class BookShelf extends Component {
     this.state = {books: []};
   }
   render() {
+    const books = this.state.books;
     return (
       <table>
         <thead>
@@ -30,4 +31,4 @@ class BookShelf extends Component {
   }
 }
 
-export default App;
+export default BookShelf;
