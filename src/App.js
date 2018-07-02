@@ -30,10 +30,22 @@ const sample = [
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {books: sample};
+    this.state = {books: this.load()};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
+  }
+  save(books) {
+    this.setState({books});  
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+  load() {
+    if (localStorage.getItem("books") == null) {
+      return sample;
+    }else{
+      const books = JSON.parse(localStorage.getItem("books"));
+      return books;
+    }
   }
   newBook(event){
     const title = event.target.children[2].value;
@@ -54,19 +66,19 @@ class App extends Component {
   addToLibrary(book){
     const books = this.state.books;
     books.push(book);
-    this.setState({books});
+    this.save(books);
   }
   removeFromLibrary(bookId){
     const books = this.state.books;
     books.splice(bookId,1);
-    this.setState({books});    
+    this.save(books);    
   }
   toggleStatus(bookId){
     const books = this.state.books;
     const book  = books[bookId];
     book.status? book.status = false : book.status = true;
     
-    this.setState({books});
+    this.save(books);
   }
   handleDelete(bookId){
     this.removeFromLibrary(bookId);     
