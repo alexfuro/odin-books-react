@@ -12,7 +12,7 @@ class Book extends Component {
         <td>{book.pages}</td>
         <td>{book.status? "read" : "unread"}</td>
         <td><button>Change Status</button></td>
-        <td><button>Delete Book</button></td>
+        <td><button onClick={() => this.props.onDelete(this.props.id)}>Delete Book</button></td>
       </tr>
     );
   }

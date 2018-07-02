@@ -32,6 +32,7 @@ class App extends Component {
     super(props);
     this.state = {books: sample};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   newBook(event){
     const title = event.target.children[2].value;
@@ -54,6 +55,14 @@ class App extends Component {
     books.push(book);
     this.setState({books});
   }
+  removeFromLibrary(bookId){
+    const books = this.state.books;
+    books.splice(bookId,1);
+    this.setState({books});    
+  }
+  handleDelete(bookId){
+    this.removeFromLibrary(bookId);     
+  }
   handleSubmit(event){
     event.preventDefault();
     
@@ -70,7 +79,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">My Bookshelf</h1>
         </header>
-        <Bookshelf books={this.state.books} />
+        <Bookshelf books={this.state.books} onDelete={this.handleDelete}/>
         <BookForm onSubmit={this.handleSubmit}/>
       </div>
     );
