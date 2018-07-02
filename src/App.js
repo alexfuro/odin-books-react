@@ -39,6 +39,7 @@ class App extends Component {
           <h1 className="App-title">My Bookshelf</h1>
         </header>
         <Bookshelf books={this.state.books} />
+        <BookForm />
       </div>
     );
   }
