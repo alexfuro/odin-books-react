@@ -11,7 +11,7 @@ class BookForm extends Component {
         <label for="author">Author</label>
         <input type="text" id="author" name="author" placeholder="author"/>
         
-        <label for="descrip">Title</label>
+        <label for="descrip">Description</label>
         <textarea id="descrip" name="descrip" ></textarea>
         
         <label for="pages">Title</label>
