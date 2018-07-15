@@ -7,20 +7,20 @@ import BookForm from './bookform';
 const sample = [
   {
     title: "Moby Dick",
-    author: "Some dude",
-    descrip: "Whales man",
+    author: "Herman Melville",
+    descrip: "Whales man, whales...",
     pages: "2000",
     status: true
   },{
     title: "Dick Tracy",
-    author: "Some other dude",
-    descrip: "Dectective man",
+    author: "Chester Gould",
+    descrip: "Dectective man...",
     pages: "200",
     status: false
   },{
     title: "No Longer Human",
-    author: "Dazai",
-    descrip: "Jap man",
+    author: "Osamu Dazai",
+    descrip: "Is it fiction?",
     pages: "500",
     status: false
   }
