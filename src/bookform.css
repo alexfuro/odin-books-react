@@ -1,7 +1,7 @@
 form {
   margin: 20px auto;
   padding: 0;
-  width: 30%;
+  width: 40%;
   background-color: #FAFAFA;
   box-shadow: 0px 6px 9px 3px #757575;
 }
@@ -46,10 +46,20 @@ input[type=submit]:hover {
 
 @media only screen and (max-width: 700px){
   form {
-    width: 40%;
+    width: 50%;
   }
 }
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 699px){
+  form {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 520px){
+  form {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 420px){
   form {
     width: 100%;
   }
